@@ -74,8 +74,3 @@ export default async function handler(req: Request) {
     }
     return new Response('Method Not Allowed', { status: 405 });
 }
-
-// Vercel-specific configuration for optimal streaming.
-export const config = {
-  runtime: 'edge',
-};

@@ -1,0 +1,18 @@
+# Configurações de build para a Netlify
+[build]
+  # Comando para construir o seu site (Vite/React)
+  command = "npm run build"
+  
+  # Pasta onde o site construído será colocado
+  publish = "dist"
+  
+  # Pasta que contém as suas funções de backend (serverless functions)
+  functions = "api"
+
+# Redirecionamento para a sua API
+# Isso diz à Netlify para enviar qualquer requisição que comece com /api/
+# para a sua função de backend correspondente.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
